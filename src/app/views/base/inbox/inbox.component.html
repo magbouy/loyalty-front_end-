@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+</head>
+
+
+
+    <!--div>
+      <pagination-controls
+       previousLabel="Prev"
+       nextLabel="Next"
+       (pageChange)="onTableDataChange($event)"
+    >
+
+      </pagination-controls>
+    </div-->
+
+<div class="container">
+
+<table class="table table-bordered shadow">
+<thead>
+    <tr>
+      <th>Request Id</th>
+        <th>Name Of Responder</th>
+        <th>Message</th>
+        <th>Responded On</th>
+        <th>Status</th>
+    </tr>
+</thead>
+<tbody>
+    <!--tr *ngFor="let request of requests|paginate:{itemsPerPage: tableSize,
+      currentPage: page,
+      totalItems: count};
+      let i = index"3-->
+      <tr *ngFor="let request of requests">
+        <td><span>{{ request.requestReference }}</span></td>
+        <td><span>{{ request.organisationName }}</span></td>
+        <td><span>{{ request.message }}</span></td>
+        <td><span>{{ request.createdOn | date:'longDate' }}</span></td>
+        <td>{{ request.responseStatus}}</td>
+
+      </tr>
+</tbody>
+</table>
+
+</div>

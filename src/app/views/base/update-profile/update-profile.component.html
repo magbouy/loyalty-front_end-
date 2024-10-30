@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+</html>
+  <br><br>
+  <div class="container">
+    <div class="form">
+      <form (submit)="submitForm(detailsForm.value); detailsForm.reset()" > <!--#detailsForm="ngForm"-->
+
+        <div class="form-group">
+          <label class="form-label" for="organisationName">Name Of Organisation</label>
+          <input type="text" class="form-control" id="organisationName" ngModel name="organisationName" required>
+        </div>
+
+        <div class="form-group">
+          <label  autoComplete="email"class="form-label" for="contactEmail">Email</label>
+          <input type="text" class="form-control" id="contactEmail" ngModel name="contactEmail" >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phoneNumber">Phone Number</label>
+          <input type="text" class="form-control" id="phoneNumber" ngModel name="phoneNumber" required >
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="stakeholderType">Stakeholder Type</label>
+          <input type="text" class="form-control" id="stakeholderType" ngModel name="stakeholderType" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="physicalAddress">Physical Address</label>
+          <input type="text" class="form-control" id="physicalAddress" ngModel name="physicalAddress" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="industry">Industry</label>
+            <input type="text" class="form-control" id="industry" ngModel name="industry" required>
+          </div>
+        <button type="submit" class="submit-button">Update Records</button>
+      </form>
+    </div>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <style>
+
+  </style>
+</head>
+<button style="margin-right: 30px; color: white; background-color: #2c3e56;" class="btn"
+        [routerLink]="'/base/add-organisation'">
+  Add Organisation
+</button>
+<br><br>
+<div class="container">
+
+  <table class="table shadow" matSort>
+    <thead>
+    <tr>
+      <th mat-sort-header>#</th>
+      <th>Name</th>
+      <th>Stakeholder Type</th>
+      <th>Industry</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let org of organisations; let i = index">
+      <td><span>{{ i + 1 }}</span></td>
+      <td><span>{{ org.organisationName | titlecase }}</span></td>
+      <td><span>{{ org.stakeholderType }}</span></td>
+      <td><span>{{ org?.industry }}</span></td>
+      <td><span>{{ org?.physicalAddress }}</span></td>
+      <td><span>{{ org?.contactEmail }}</span></td>
+      <td><span>{{ org?.phoneNumber }}</span></td>
+      <td><span>{{ org?.isActive }}</span></td>
+      <td class="d-flex">
+        <span><a [routerLink]="['/base/edit-organisation', org?.id]">
+        <i class="btn btn-sm bi bi-person-rolodex" matTooltip="Edit" style="color: #2c3e56; font-size: 20px"></i>
+          </a></span>
+<!--        <span><i class="btn bi bi-trash" matTooltip="Deactivate" style="color: #cf2f4c; font-size: 16px"></i></span>-->
+      </td>
+      <!--      <td><span><i class="btn bi bi-trash" style="color: #cf2f4c; font-size: 23px"></i></span></td>-->
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<pagination-controls
+  class=" pagination-controls"
+  previousLabel="Prev"
+  nextLabel="Next"
+  (pageChange)="onTableDataChange($event)"
+>
+</pagination-controls>
+
+
+<!-- Modal -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Respond To A Request</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+
+  <!--  <div class="container">-->
+  <!--    <div class="form">-->
+  <!--      <form   #detailsForm="ngForm">-->
+  <!--        <div class="form-row">-->
+  <!--          <div class="form-group col">-->
+
+  <!--          </div>-->
+  <!--          <div class="modal-body">-->
+
+  <!--            <div class="mb-3">-->
+
+  <!--              <div class="form-group">-->
+  <!--                <label for="userType">Decision:</label>-->
+  <!--                <select class="form-control" id="userType" [(ngModel)]="decision" name="userType">-->
+  <!--                  <option   value="proceed" >Proceed</option>-->
+  <!--                  <option   value="Wait" >Wait</option>-->
+  <!--                  <option   value="Deny" >Deny</option>-->
+  <!--                </select>-->
+  <!--              </div>-->
+
+
+  <!--              <div class="input-group">-->
+  <!--                <input type="text" [value]="selectedItem" id="decision"class="form-control" placeholder="proceed" name="dp" ngbDatepicker #dp="ngbDatepicker" hidden />-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--            {{decision}}-->
+
+  <!--            <div class="mb-3">-->
+  <!--              <label for="dateOfBirth">Message</label>-->
+  <!--              <div class="input-group">-->
+  <!--                <textarea cols="2" rows="2" id="message" [(ngModel)]="message" class="form-control"placeholder="message"type="text"name="dp"></textarea>-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </form>-->
+  <!--      <div class="modal-footer">-->
+  <!--        <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click');submitForm()">Submit</button>-->
+  <!--      </div>-->
+
+  <!--    </div>-->
+  <!--  </div>-->
+
+
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

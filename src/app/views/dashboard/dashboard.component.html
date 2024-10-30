@@ -1,0 +1,533 @@
+<app-widgets-dropdown></app-widgets-dropdown>
+
+
+
+   <c-row>
+    <c-col>
+      <c-card class="mb-3">
+        <!-- <img cCardImg="top" src="./assets/img/angular.jpg"> -->
+        <c-card-body>
+          <h5 cCardTitle>Experince World Class Shopping With Us</h5>
+          <p cCardText>
+             <c-carousel>
+            <c-carousel-indicators></c-carousel-indicators>
+            <c-carousel-inner>
+              <c-carousel-item *ngFor="let slide of slides">
+                <img
+                  alt="{{slide.title}}"
+                  class="d-block w-100"
+                  loading="lazy"
+                  src="{{slide.src}}"
+                />
+                <c-carousel-caption class="d-none d-md-block">
+                  <!-- <h3>{{slide.title}}</h3> -->
+                  <p style="color: black;">{{slide.subtitle}}</p>
+                </c-carousel-caption>
+              </c-carousel-item>
+            </c-carousel-inner>
+            <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+            <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+          </c-carousel> </p>
+          <p cCardText>
+            <small class="text-medium-emphasis">Last updated moments ago</small>
+          </p>
+        </c-card-body>
+      </c-card>
+    </c-col>
+    <c-col>
+      <c-card class="mb-3">
+        <c-card-body>
+          <h5 cCardTitle>The More You Shop The More Points You Earn</h5>
+          <p cCardText>
+            
+
+            <c-carousel>
+              <c-carousel-indicators></c-carousel-indicators>
+              <c-carousel-inner>
+                <c-carousel-item *ngFor="let slide of slidess">
+                  <img
+                    alt="{{slide.title}}"
+                    class="d-block w-100"
+                    loading="lazy"
+                    src="{{slide.src}}"
+                  />
+                  <c-carousel-caption class="d-none d-md-block">
+                    <h3>{{slide.title}}</h3>
+                    <p>{{slide.subtitle}}</p>
+                  </c-carousel-caption>
+                </c-carousel-item>
+              </c-carousel-inner>
+              <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+              <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+            </c-carousel> 
+
+          </p>
+          <p cCardText>
+            <small class="text-medium-emphasis">Last updated 3 mins ago</small>
+          </p>
+        </c-card-body>
+        <!-- <img cCardImg="bottom" src="./assets/img/angular.jpg"> -->
+      </c-card>
+    </c-col>
+  </c-row>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--c-card-body>
+        <c-row>-->
+  <!--      <c-col sm="5">-->
+  <!--        <h4 class="card-title mb-0" id="traffic">Traffic</h4>-->
+  <!--        <div class="small text-medium-emphasis">January - December 2021</div>-->
+  <!--      </c-col>-->
+  <!--    
+  hieeeeee
+  
+  <c-col class="d-none d-md-block" sm="7">-->
+  <!--        <button cButton class="float-end" color="primary">-->
+  <!--          <svg cIcon name="cilCloudDownload"></svg>-->
+  <!--        </button>-->
+  <!--        <form [formGroup]="trafficRadioGroup">-->
+  <!--          <c-button-group class="float-end me-3" role="group">-->
+  <!--            <input-->
+  <!--              class="btn-check"-->
+  <!--              formControlName="trafficRadio"-->
+  <!--              type="radio"-->
+  <!--              value="Day"-->
+  <!--            />-->
+  <!--            <label-->
+  <!--              (click)="setTrafficPeriod('Day')"-->
+  <!--              cButton-->
+  <!--              cFormCheckLabel-->
+  <!--              color="secondary"-->
+  <!--              variant="outline"-->
+  <!--            >Day</label>-->
+
+  <!--            <input-->
+  <!--              class="btn-check"-->
+  <!--              formControlName="trafficRadio"-->
+  <!--              type="radio"-->
+  <!--              value="Month"-->
+  <!--            />-->
+  <!--            <label-->
+  <!--              (click)="setTrafficPeriod('Month')"-->
+  <!--              cButton-->
+  <!--              cFormCheckLabel-->
+  <!--              color="secondary"-->
+  <!--              variant="outline"-->
+  <!--            >Month</label>-->
+
+  <!--            <input-->
+  <!--              class="btn-check"-->
+  <!--              formControlName="trafficRadio"-->
+  <!--              type="radio"-->
+  <!--              value="Year"-->
+  <!--            />-->
+  <!--            <label-->
+  <!--              (click)="setTrafficPeriod('Year')"-->
+  <!--              cButton-->
+  <!--              cFormCheckLabel-->
+  <!--              color="secondary"-->
+  <!--              variant="outline"-->
+  <!--            >Year</label>-->
+  <!--          </c-button-group>-->
+  <!--        </form>-->
+  <!--      </c-col>-->
+  <!--    </c-row>-->
+  <!--    <c-chart-->
+  <!--      [data]="mainChart.data"-->
+  <!--      [height]="300"-->
+  <!--      [ngStyle]="{ 'marginTop.px': 40 }"-->
+  <!--      [options]="mainChart.options"-->
+  <!--      [type]="mainChart.type"-->
+  <!--    >-->
+  <!--      Main chart-->
+  <!--    </c-chart>
+</c-card-body>-->
+  <!--  <c-card-footer>-->
+  <!--    <c-row class="text-center" [md]="5" [xs]="1">-->
+  <!--      <c-col class="mb-sm-2 mb-0">-->
+  <!--        <div class="text-medium-emphasis">Visits</div>-->
+  <!--        <strong>29.703 Users (40%)</strong>-->
+  <!--        <c-progress class="mt-2" thin>-->
+  <!--          <c-progress-bar color="success" value="40"></c-progress-bar>-->
+  <!--        </c-progress>-->
+  <!--      </c-col>-->
+  <!--      <c-col class="mb-sm-2 mb-0">-->
+  <!--        <div class="text-medium-emphasis">Unique</div>-->
+  <!--        <strong>24.093 Users (20%)</strong>-->
+  <!--        <c-progress class="mt-2" thin>-->
+  <!--          <c-progress-bar color="info" value="20"></c-progress-bar>-->
+  <!--        </c-progress>-->
+  <!--      </c-col>-->
+  <!--      <c-col class="mb-sm-2 mb-0">-->
+  <!--        <div class="text-medium-emphasis">Page views</div>-->
+  <!--        <strong>78.706 Views (60%)</strong>-->
+  <!--        <c-progress class="mt-2" thin>-->
+  <!--          <c-progress-bar color="warning" value="60"></c-progress-bar>-->
+  <!--        </c-progress>-->
+  <!--      </c-col>-->
+  <!--      <c-col class="mb-sm-2 mb-0">-->
+  <!--        <div class="text-medium-emphasis">New Users</div>-->
+  <!--        <strong>22.123 Users (80%)</strong>-->
+  <!--        <c-progress class="mt-2" thin>-->
+  <!--          <c-progress-bar color="danger" value="80"></c-progress-bar>-->
+  <!--        </c-progress>-->
+  <!--      </c-col>-->
+  <!--      <c-col class="mb-sm-2 mb-0">-->
+  <!--        <div class="text-medium-emphasis">Bounce Rate</div>-->
+  <!--        <strong>Average Rate (40.15%)</strong>-->
+  <!--        <c-progress class="mt-2" thin>-->
+  <!--          <c-progress-bar value="40"></c-progress-bar>-->
+  <!--        </c-progress>-->
+  <!--      </c-col>-->
+  <!--    </c-row>-->
+  <!--  </c-card-footer>-->
+  <!--</c-card>-->
+
+  <!--<app-widgets-brand [withCharts]="true"></app-widgets-brand>-->
+
+  <!--<c-row>-->
+  <!--  <c-col xs>-->
+  <!--    <c-card class="mb-4">-->
+  <!--      <c-card-header>Traffic {{ "&" }} Sales</c-card-header>-->
+  <!--      <c-card-body>-->
+  <!--        <c-row>-->
+  <!--          <c-col md="6" xl="6" xs="12">-->
+  <!--            <c-row>-->
+  <!--              <c-col sm="6">-->
+  <!--                <div-->
+  <!--                  class="border-start border-start-4 border-start-info py-1 px-3 mb-3"-->
+  <!--                >-->
+  <!--                  <div class="text-medium-emphasis small">New Clients</div>-->
+  <!--                  <div class="fs-5 fw-semibold">9,123</div>-->
+  <!--                </div>-->
+  <!--              </c-col>-->
+  <!--              <c-col sm="6">-->
+  <!--                <div-->
+  <!--                  class="border-start border-start-4 border-start-danger py-1 px-3 mb-3"-->
+  <!--                >-->
+  <!--                  <div class="text-medium-emphasis small">-->
+  <!--                    Recurring Clients-->
+  <!--                  </div>-->
+  <!--                  <div class="fs-5 fw-semibold">22,643</div>-->
+  <!--                </div>-->
+  <!--              </c-col>-->
+  <!--            </c-row>-->
+
+  <!--            <hr class="mt-0"/>-->
+
+  <!--            &lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-prepend">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <span class="text-medium-emphasis small">Monday</span>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="info" value="34"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="danger" value="78"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-prepend">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <span class="text-medium-emphasis small">Tuesday</span>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="info" value="56"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="danger" value="94"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-prepend">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <span class="text-medium-emphasis small">Wednesday</span>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="info" value="12"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="danger" value="67"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-prepend">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <span class="text-medium-emphasis small">Thursday</span>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="info" value="43"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="danger" value="91"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-prepend">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <span class="text-medium-emphasis small">Friday</span>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="info" value="22"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="danger" value="73"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-prepend">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <span class="text-medium-emphasis small">Saturday</span>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="info" value="53"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="danger" value="82"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-prepend">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <span class="text-medium-emphasis small">Sunday</span>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="info" value="9"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                  <c-progress-bar color="danger" value="69"></c-progress-bar>&ndash;&gt;-->
+  <!--            &lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--            &lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            <div class="legend text-center" ngPreserveWhitespaces>&ndash;&gt;-->
+  <!--&lt;!&ndash;              <small>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <sup>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <span class="badge badge-pill badge-sm bg-info">&nbsp;</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </sup>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>New clients</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                &nbsp;&nbsp;&ndash;&gt;-->
+  <!--&lt;!&ndash;                <sup>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <span class="badge badge-pill badge-sm bg-danger">&nbsp;</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </sup>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>Recurring clients</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </small>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--          </c-col>-->
+
+  <!--          <c-col md="6" xl="6" xs="12">-->
+  <!--            <c-row>-->
+  <!--              <c-col sm="6">-->
+  <!--                <div class="border-start border-start-4 border-start-warning py-1 px-3 mb-3">-->
+  <!--                  <div class="text-medium-emphasis small">Page views</div>-->
+  <!--                  <div class="fs-5 fw-semibold">78,623</div>-->
+  <!--                </div>-->
+  <!--              </c-col>-->
+  <!--              <c-col sm="6">-->
+  <!--                <div class="border-start border-start-4 border-start-success py-1 px-3 mb-3">-->
+  <!--                  <div class="text-medium-emphasis small">Organic</div>-->
+  <!--                  <div class="fs-5 fw-semibold">49,123</div>-->
+  <!--                </div>-->
+  <!--              </c-col>-->
+  <!--            </c-row>-->
+
+  <!--&lt;!&ndash;            <hr class="mt-0"/>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;            <div class="progress-group mb-4">&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-header">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <svg cIcon class="icon icon-lg me-2" name="cilUser"></svg>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>Male</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span class="ms-auto font-semibold">43%</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <c-progress-bar color="warning" value="43"></c-progress-bar>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            <div class="progress-group mb-5">&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-header">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <svg cIcon class="icon icon-lg me-2" name="cilUserFemale"></svg>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>Female</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span class="ms-auto font-semibold">37%</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <c-progress-bar color="warning" value="37"></c-progress-bar>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;            <div class="progress-group">&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-header">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <svg cIcon class="icon icon-lg me-2" name="cibGoogle"></svg>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>Organic Search</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span class="ms-auto font-semibold">&ndash;&gt;-->
+  <!--&lt;!&ndash;                  191,235 <span class="text-medium-emphasis small">(56%)</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </span>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <c-progress-bar color="success" value="56"></c-progress-bar>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            <div class="progress-group">&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-header">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <svg cIcon class="icon icon-lg me-2" name="cibFacebook"></svg>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>Facebook</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span class="ms-auto font-semibold">&ndash;&gt;-->
+  <!--&lt;!&ndash;                  51,223 <span class="text-medium-emphasis small">(15%)</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </span>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <c-progress-bar color="success" value="15"></c-progress-bar>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            <div class="progress-group">&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-header">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <svg cIcon class="icon icon-lg me-2" name="cibTwitter"></svg>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>Twitter</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span class="ms-auto font-semibold">&ndash;&gt;-->
+  <!--&lt;!&ndash;                  37,564 <span class="text-medium-emphasis small">(11%)</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </span>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <c-progress-bar color="success" value="11"></c-progress-bar>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            <div class="progress-group">&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-header">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <svg cIcon class="icon icon-lg me-2" name="cibLinkedin"></svg>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span>LinkedIn</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                <span class="ms-auto font-semibold">&ndash;&gt;-->
+  <!--&lt;!&ndash;                  27,319 <span class="text-medium-emphasis small">(8%)</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </span>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;              <div class="progress-group-bars">&ndash;&gt;-->
+  <!--&lt;!&ndash;                <c-progress thin>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <c-progress-bar color="success" value="8"></c-progress-bar>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </c-progress>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;            <div class="divider d-flex justify-content-center">&ndash;&gt;-->
+  <!--&lt;!&ndash;              <button&ndash;&gt;-->
+  <!--&lt;!&ndash;                cButton&ndash;&gt;-->
+  <!--&lt;!&ndash;                class="text-muted btn-link"&ndash;&gt;-->
+  <!--&lt;!&ndash;                color="transparent"&ndash;&gt;-->
+  <!--&lt;!&ndash;                size="sm"&ndash;&gt;-->
+  <!--&lt;!&ndash;                type="button"&ndash;&gt;-->
+  <!--&lt;!&ndash;              >&ndash;&gt;-->
+  <!--&lt;!&ndash;                <svg cIcon name="cil-options"></svg>&ndash;&gt;-->
+  <!--&lt;!&ndash;              </button>&ndash;&gt;-->
+  <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+  <!--          </c-col>-->
+  <!--        </c-row>-->
+  <!--      </c-card-body>-->
+  <!--    </c-card>-->
+  <!--  </c-col>-->
+  <!--</c-row>-->
+  <!-- <img cImg height="200" rounded src="assets/img/angular400.jpg" thumbnail width="200" /> -->
+
+  <!-- <c-card>
+    <img cCardImg="top" height="100px" rounded src="./assets/images/angular.jpg"  width="10px">
+
+    <c-card-body>
+      <p cCardText>
+        Some quick example <strong>text</strong> to build on the card title and make up the bulk of the card's content.
+      </p>
+    </c-card-body>
+  </c-card>
+  
+  <c-row>
+    <c-col xs>
+      <c-card class="mb-4">
+        <c-card-header>Users</c-card-header>
+        <c-card-body>
+          
+          <img cImg height="200" rounded src="assets/img/angular400.jpg" thumbnail width="200" /> 
+          <br><br>
+          <img cImg height="200" rounded src="assets/img/angular400.jpg" thumbnail width="200" /> 
+
+          <table
+            [hover]="true"
+            [responsive]="true"
+            [striped]="true"
+            align="middle"
+            cTable
+            class="mb-0 border"
+          >
+            <thead cTableColor="light">
+            <tr>
+              <th class="text-center">
+                <svg cIcon name="cilPeople"></svg>
+              </th>
+              <th>Organisation</th>
+              <th>Contact Email</th>
+              <th>Contact Number</th>
+              <th>Stakeholder Type</th>
+              <th>Industry</th>
+              <th>Active Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of organisations; index as i">
+              <td><a [routerLink]="['/base/edit-organisation', user.id]">{{user.id}}</a></td>
+              <td>{{ user.organisationName }}</td>
+              <td> {{user.contactEmail}}</td>
+              <td>{{user.phoneNumber}}</td>
+              <td>{{user.stakeholderType}}</td>
+              <td>{{user.industry}}</td>
+              <td>{{user.isActive}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+</c-card> -->

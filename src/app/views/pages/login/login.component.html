@@ -1,0 +1,105 @@
+<div id="main">
+  <div id="maindiv" class="bg-light min-vh-100 d-flex flex-row align-items-center">
+    <c-container>
+      <c-row class="justify-content-center">
+        <c-col md="8">
+          <c-card-group>
+            <c-card class="p-4">
+              <c-card-body>
+                <form cForm (submit)="submitForm()">
+                  <h1>User Portal</h1>
+                  <p class="text-medium-emphasis">Sign In to your account</p>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                    <input autoComplete="username" cFormControl placeholder="usernamee"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="username"/>
+                  </c-input-group>
+                  <c-input-group class="mb-4">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilLockLocked"></svg>
+                    </span>
+                    <input
+                      cFormControl
+                      placeholder="Password"
+                      type="password"
+                      [ngModelOptions]="{standalone: true}"
+                      [(ngModel)]="password"
+                    />
+                  </c-input-group>
+                  <c-row>
+                    
+                    <c-col class="text-left" xs="6">Don't have an account?<a style="text-decoration: none" margin-left="2000px"class="px-1" routerLink="/signup">
+                        Register here.
+                      </a>
+                      <button type="submit" cButton class="px-4" style="background-color: #2c3e56; color: white;">
+                        Login
+                      </button>
+                   
+                      <!-- <button type="submit" cButton class="px-4" style="background-color: #2c3e56; color: white;" routerLink="/dashboard">
+                        Login
+                      </button> -->
+                    </c-col>
+               
+                    <c-col xs="6">
+                      <!-- <button type="submit" cButton class="px-4" style="background-color: #2c3e56; color: white;" routerLink="/dashboard">
+                       Admin Sign in
+                      </button> -->
+                      <button routerLink="/register" cButton style="background-color: #2c3e56; color: white;">Operator Portal </button>
+
+                      <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButton style="background-color: #2c3e56; color: white;">Operator Portal </button> -->
+
+                      <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal">
+                        <c-modal-header>
+                          <h5 cModalTitle>Please enter your admin credentials</h5>
+                          <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button>
+                        </c-modal-header>
+                        <c-modal-body>
+                          <c-input-group class="mb-3">
+                            <span cInputGroupText>
+                              <svg cIcon name="cilUser"></svg>
+                            </span>
+                            <input autoComplete="username" cFormControl placeholder="Email"
+                                   [ngModelOptions]="{standalone: true}" [(ngModel)]="adminemail"/>
+                          </c-input-group>
+
+                          <c-input-group class="mb-4">
+                            <span cInputGroupText>
+                              <svg cIcon name="cilLockLocked"></svg>
+                            </span>
+                            <input
+                              cFormControl
+                              placeholder="Password"
+                              type="password"
+                              [ngModelOptions]="{standalone: true}"
+                              [(ngModel)]="adminpassword"
+                            />
+                          </c-input-group>
+                        </c-modal-body>
+                        <c-modal-footer>
+                          <button [cModalToggle]="verticallyCenteredModal.id" cButton color="secondary">
+                            Cancel
+                          </button>
+                          <button cButton color="primary" routerLink="/register">Submit </button>
+                        </c-modal-footer>
+                      </c-modal>
+                      
+
+                     
+                    </c-col>
+                
+
+                  </c-row>
+                </form>
+              </c-card-body>
+            </c-card>
+          </c-card-group>
+
+        </c-col>
+      </c-row>
+    </c-container>
+  </div>
+</div>
+
+

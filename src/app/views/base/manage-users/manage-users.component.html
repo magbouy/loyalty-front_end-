@@ -1,0 +1,26 @@
+<a class="btn mb-1 ml-1" style="background-color: #2c3e56; color: white;" routerLink="/base/add-user">Add User</a>
+<table class="table table-sm shadow p-2 m-1" bordered striped cTable small>
+  <thead>
+    <tr>
+      <th class="text-center">User Id</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Organisation</th>
+      <th>Status</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of platformUsers; let i = index">
+    <td class="text-center">{{ i + 1 }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.role }}</td>
+    <td>{{ user.organisation }}</td>
+    <td>{{ user.isActive}}</td>
+    <td><a [routerLink]="['/base/edit-users', user.id]">
+      <i class="btn btn-sm bi bi-person-vcard pt-0" style="color: #2c3e56; font-size: 20px"></i>
+    </a></td>    <td>
+      </td>
+  </tr>
+  </tbody>
+</table>

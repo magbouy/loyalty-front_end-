@@ -1,0 +1,16 @@
+#maindiv{
+  background-image: url('~src/assets/images/customer.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#app-title {
+  font-size: 70px;
+}
+

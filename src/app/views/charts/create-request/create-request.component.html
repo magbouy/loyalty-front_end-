@@ -1,0 +1,89 @@
+
+<br><br>
+<div class="maindiv">
+  <div class="container">
+    <div class="form">
+      <form (submit)="submitForm(detailsForm.value); detailsForm.reset()" #detailsForm="ngForm">
+        <div class="form-group col">
+          <label class="form-label" for="city/town">Location</label>
+          <input type="text" class="form-control" id="location"  ngModel placeholder="General Location" name="location" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label" for="city/town">From</label>
+            <input type="text" class="form-control" id="city/town" ngModel placeholder="city/town" name="city" required>
+          </div>
+  
+          <div class="form-group col">
+            <label class="form-label" for="street">From</label>
+            <input type="text" class="form-control" id="street" ngModel placeholder="street name & number" name="street" required>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label class="form-label" for="latitude"></label>
+              <input type="text" class="form-control" id="latitude" ngModel name="latitude" placeholder="latitude from">
+            </div>
+    
+            <div class="form-group col">
+              <label class="form-label" for="longitude"></label>
+              <input type="text" class="form-control" id="longitude" ngModel name="longitude" placeholder="longitude from">
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label" for="city/town">To</label>
+            <input type="text" class="form-control" id="city/town"   ngModel placeholder="city/town" name="cityTo" required>
+          </div>
+  
+          <div class="form-group col">
+            <label class="form-label" for="street">To</label>
+            <input type="text" class="form-control" id="street"  ngModel placeholder="street name & number" name="streetTo" required>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label" for="latitude"></label>
+            <input type="text" class="form-control" id="latitude" ngModel name="latitudeTo" placeholder="latitude to">
+          </div>
+  
+          <div class="form-group col">
+            <label class="form-label" for="longitude"></label>
+            <input type="text" class="form-control" id="longitude" ngModel name="longitudeTo" placeholder="longitude to">
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label" for="proposedDate">Proposed Date</label>
+            <input type="date" class="form-control" id="proposedDate" ngModel name="proposedDate" required>
+          </div>
+  
+          <div class="form-group col">
+            <label class="form-label" for="endDate">End Date</label>
+            <input type="date" class="form-control" id="endDate" ngModel name="endDate" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label class="form-label" for="purpose">Purpose</label>
+          <textarea type="text" class="form-control" id="purpose" ngModel name="purpose" required></textarea>
+        </div>
+  
+        <button type="submit" class="submit-button">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
+  
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .form-control {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+  
+<span class="text-right" xs="6">
+  <button type="submit" cButton class="px-4" color="primary"  [routerLink]="'/base/my-requests'">
+    All Requests
+  </button>
+</span>
+ 
+    <button type="submit" cButton class="px-4" color="blue" [routerLink]="'/base/my-requests'" >
+      My Requests
+    </button>
+  
+    <!--div>
+      <pagination-controls
+       previousLabel="Prev"
+       nextLabel="Next"
+       (pageChange)="onTableDataChange($event)"
+    >
+    
+      </pagination-controls>
+    </div-->
+
+<div class="container">
+<table class="table table-bordered table-striped">
+<thead>
+    <tr>
+        <th>Name Of Organisation</th>
+        <th>Location</th>
+        <th>Purpose</th>
+        <th>Status</th>
+        <th>Proposed Date</th>
+        <th>Requested On</th>
+        <th>End Date</th>
+        <th>Id</th>
+    </tr>
+</thead>
+<tbody>
+    <!--tr *ngFor="let request of requests|paginate:{itemsPerPage: tableSize,
+      currentPage: page, 
+      totalItems: count}; 
+      let i = index"-->
+      <tr *ngFor="let request of requests">
+        <td><span>{{ request.nameOfOrganisation }}</span></td>
+        <td><span>{{ request.location }}</span></td>
+        <td><span>{{ request.purpose }}</span></td>
+        <td><span>{{ request.status }}</span></td>
+        <td><span>{{ request.proposedDate | date:'medium' }}</span></td>
+        <td><span>{{ request.requestedOn }}</span></td>
+        <td><span>{{ request.endDate }}</span></td>
+        <td><span>{{ request.id }}</span></td>
+      </tr>
+</tbody>
+</table>
+</div>
+

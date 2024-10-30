@@ -1,0 +1,88 @@
+<div id="main">
+  <div id="maindiv" class="bg-light min-vh-100 d-flex flex-row align-items-center">
+    <c-container>
+      <c-row class="justify-content-center" style="height: 80vh">
+        <h1 class="text-center text-white mb-3 p-2" id="app-title">BONUS POINTS REWARDING SYSTEM</h1>
+        <c-col md="8" sm="10" lg="6">
+          <c-card-group>
+            <c-card class="p-4">
+              <c-card-body>
+                <form (submit)="submitForm()">
+                  <h1 class="text-center">ADMIN PORTAL</h1><br>
+                  <p class="text-medium-emphasis text-center"></p>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilPeople"></svg>
+                    </span>
+                    <input [disabled]="false" cFormControl placeholder="Admin Id"
+                           [ngModelOptions]="{standalone: true}" name="operatorId" [(ngModel)]="operatorId"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                    <input cFormControl placeholder="Admin username"
+                           [ngModelOptions]="{standalone: true}" name="adminusername" [(ngModel)]="adminusername"/>
+                  </c-input-group>
+                  <!-- <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="stakeholderType" [(ngModel)]="stakeholderType">
+                      <option selected>Choose stakeholder type</option>
+                      <option value="Service Provider">Service Provider</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Governance">Governance and Oversight</option>
+                    </select>
+                  </c-input-group> -->
+
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilLocationPin"></svg>
+                    </span>
+                    <input cFormControl placeholder="Customer Username"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="username" name="username"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilEnvelopeClosed"></svg>
+                    </span>
+                    <input cFormControl placeholder="Customer Phonenumber"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="phonenumber" name="phonenumber"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilInbox"></svg>
+                    </span>
+                    <input cFormControl placeholder=" Receipt number"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="receiptcode" name="receiptcode"/>
+                  </c-input-group>
+
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilInbox"></svg>
+                    </span>
+                    <input cFormControl placeholder="Amount Purchased"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="amount" name="amount"/>
+                  </c-input-group>
+
+                  <c-row>
+                    <c-col xs="6">
+                      <button type="submit" cButton class="px-4" color="primary">
+                        Award Points
+                      </button>
+
+                    </c-col>
+                    <c-col>
+                      <a routerLink="/login" cButton class="btn btn-outline">Login</a>
+                    </c-col>
+                  </c-row>
+                </form>
+              </c-card-body>
+            </c-card>
+          </c-card-group>
+        </c-col>
+      </c-row>
+    </c-container>
+  </div>
+</div>

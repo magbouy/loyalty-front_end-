@@ -1,0 +1,159 @@
+<div class="main">
+  <div id="maindiv">
+    <c-card id="regStepper" class="shadow p-3">
+      <c-card-body>
+      <mat-stepper linear #stepper>
+        <mat-step >
+        <!-- [stepControl]="firstFormGroup" [editable]="true" color="primary" completed="false" label="Organisation Details"> -->
+          <div class="step-content">
+            <h4 class="lead">Register your Account </h4>
+            <form (ngSubmit)="handleSignup()" [formGroup]="firstFormGroup" novalidate class="mt-4 needs-validation">
+              <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilPeople"></svg>
+                    </span>
+                <input cFormControl placeholder="First Name" required
+                       formControlName="firstname"/>
+                <span *ngIf="firstFormGroup.invalid">
+                  <!-- {{ getOrgnameError()}} -->
+
+                </span>
+                <!-- <c-form-feedback [valid]="false">Please provide a valid city.</c-form-feedback> -->
+              </c-input-group>
+              <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                <input cFormControl placeholder="Last Name"
+                       formControlName="lastname"/>
+                <span *ngIf="firstFormGroup.invalid">
+                  <!-- {{ getIndustryError()}} -->
+
+                </span>
+              </c-input-group>
+              <!-- <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <i class="bi bi-buildings"></i>
+                    </span> -->
+                <!-- <select cSelect class="form-select form-select-sm" aria-label="example"
+                        formControlName="stakeholderType"
+                >
+                  <option selected>Choose a category</option>
+                  <option value="Service Provider">Service Provider</option>
+                  <option value="Construction">Construction</option>
+                  <option value="Governance">Governance and Oversight</option>
+                </select> -->
+              <!-- </c-input-group> -->
+              <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilLocationPin"></svg>
+                    </span>
+                <input cFormControl placeholder="username(email)" formControlName="email"/>
+                  </c-input-group>
+              <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <i class="bi bi-phone"></i>
+                    </span>
+                <input cFormControl placeholder="Phone Number" formControlName="phonenumber"/>
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+              <input cFormControl placeholder="Password" type="password"
+                     formControlName="password"/>
+            </c-input-group>
+           
+            <c-row>
+              <c-col xs="2" >
+                <button type= "submit" cButton class="btn px-4" 
+                        style="background-color: #2c3e56; color: white; border-radius: 18px;">
+                  Register
+                </button>
+                                <!-- matStepperNext [disabled]="firstFormGroup.invalid" (click)="addOrg()" -->
+
+              </c-col>
+
+            
+              <c-col  xs="10" class="text-right">
+                Already have an account? <a style="text-decoration: none" class="px-1" routerLink="/login">Sign In</a>
+              </c-col>
+            </c-row>
+          </form>
+          </div>
+        </mat-step>
+        <mat-step >
+        <!-- [stepControl]="secondFormGroup" completed="false" label="Admin Details"> -->
+          <div>
+            <div class="step-content">
+              <h4 class="lead">User Registration</h4>
+              <form [formGroup]="secondFormGroup" class="mt-4">
+                <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                  <input cFormControl placeholder="Email"
+                         formControlName="email"/>
+                </c-input-group>
+                <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilLockLocked"></svg>
+                    </span>
+                  <input cFormControl placeholder="Password" type="password"
+                         formControlName="password"/>
+                </c-input-group>
+              </form>
+            </div>
+            <button type="button" cButton class="btn px-4 mx-2" matStepperPrevious
+                    style="background-color: #cf2f4c; color: white; border-radius: 18px;">
+              Back
+            </button>
+            <button type="button" cButton class="btn px-4 mx-2" matStepperNext [disabled]="secondFormGroup.invalid"
+                    style="background-color: #2c3e56; color: white; border-radius: 18px;">
+              Next
+            </button>
+          </div>
+        <!-- </mat-step>
+        <mat-step label="Done" completed="false">
+          <div id="closingStatement" class="shadow-sm p-3 mb-2">
+            <h4>What's Next?</h4>
+            <p>Once you hit the <b>Register Now</b> button with your Organisation and Administrator details for
+              verification, you can enter the portal and interact with features in the system.</p>
+            <h5>What can I do?</h5>
+            <p>You can view, create and edit dig requests, process clearances for requests from stakeholders, apply for
+              wayleaves from
+              authorities, respond to requests and interact with other stakeholders to ensure a more seamless and fluid
+              process to manage dig requests and in turn safeguard and protect national infrastructure.</p>
+          </div>
+          <div id="closingActions" class="mb-3 mt-2">
+            <c-form-check>
+              <input cFormCheckInput id="checkOne" type="checkbox" [(ngModel)]="isAgreed" />
+              <label cFormCheckLabel for="checkOne">I agree to the <a routerLink="/terms">Terms of Use</a> and <a routerLink="/privacy-policy">Privacy Policy.</a></label>
+            </c-form-check>
+          </div>
+          <div>
+            <form (ngSubmit)="handleSignup()">
+              <button type="button" cButton class="btn px-4 mx-2" matStepperPrevious
+                      style="background-color: #cf2f4c; color: white; border-radius: 18px;">
+                Back
+              </button>
+              <button type="submit" cButton class="btn px-4 mx-2" [disabled]="!isAgreed"
+                      style="background-color: #2c3e56; color: white; border-radius: 18px;">
+                Register Now
+              </button>
+              
+              <button type="button" cButton class="btn px-4 mx-2" (click)="stepper.reset();"
+                      style="background-color: #444444; color: white; border-radius: 18px;">
+                Reset
+              </button>
+            </form>
+          </div>
+        </mat-step>
+       </mat-stepper> -->
+        <div class="text-center mb-2 pb-3 container-fluid">
+          &copy; Copyright 2023 TelOne
+        </div>
+      <!-- </c-card-body> -->
+    <!-- </c-card> -->
+  <!-- </div> -->
+<!-- </div> -->

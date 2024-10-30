@@ -1,0 +1,55 @@
+#maindiv{
+  background-image: url('~src/assets/images/customer.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+#regStepper {
+  width: 70%;
+  margin: 4rem auto;
+  position: center;
+  background-color: white;
+}
+
+.step-content {
+  margin-top: 2rem;
+}
+
+.form {
+  margin-top: 2rem;
+  height: auto;
+  width: auto;
+}
+.card{
+  max-height:75% ;
+}
+
+.mat-icon.material-icons.ng-star-inserted {
+  color: green;
+  position: relative;
+  left: -15px;
+  &::before {
+    content: 'check';
+    color: #fff;
+    position: relative;
+    left: 15px;
+    font-weight: bold;
+  }
+}
+
+#closingStatement {
+  margin-top: 1rem;
+}
+

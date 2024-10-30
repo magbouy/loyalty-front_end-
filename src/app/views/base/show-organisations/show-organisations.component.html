@@ -1,0 +1,18 @@
+<!--suppress ALL -->
+<div class="contacts-container">
+  <div *ngFor="let org of organisationList;" class="contact-item">
+    <c-card class="shadow">
+      <c-card-body>
+        <h4 cCardTitle>{{org.organisationName | titlecase}}</h4>
+        <p cCardText>Stakeholder Type: {{org.stakeholderType}}</p>
+        <p cCardText>Industry: {{org.industry | titlecase}}</p>
+        <hr>
+        <p><u>Contact Information</u></p>
+        <p cCardText class=""><i class="bi bi-geo"></i> {{org.physicalAddress}}</p>
+        <p cCardText class=""><i class="bi bi-envelope"></i> {{org.contactEmail}}</p>
+        <p cCardText class=""><i class="bi bi-telephone"></i> {{org.phoneNumber}}</p>
+<!--        <button cButton color="light">Go somewhere</button>-->
+      </c-card-body>
+    </c-card>
+  </div>
+</div>

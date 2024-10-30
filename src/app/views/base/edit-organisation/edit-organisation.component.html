@@ -1,0 +1,83 @@
+<div id="main">
+  <div id="maindiv" class="bg-light min-vh-100 d-flex flex-row align-items-center">
+    <c-container>
+      <c-row class="justify-content-center">
+        <c-col md="8" sm="10" lg="6">
+          <c-card-group>
+            <c-card class="p-4">
+              <c-card-body>
+                <form (submit)="saveOrganisation()">
+                  <h3 class="text-center">Update Information</h3><br>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilPeople"></svg>
+                    </span>
+                    <input cFormControl placeholder="Organisation Name"
+                           [ngModelOptions]="{standalone: true}" name="organisationName" [(ngModel)]="organisationName"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                    <input cFormControl placeholder="Industry"
+                           [ngModelOptions]="{standalone: true}" name="industry" [(ngModel)]="industry"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="stakeholderType" [(ngModel)]="stakeholderType">
+                      <option selected>Choose stakeholder type</option>
+                      <option value="Service Provider">Service Provider</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Governance">Governance and Oversight</option>
+                    </select>
+                  </c-input-group>
+
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilLocationPin"></svg>
+                    </span>
+                    <input cFormControl placeholder="Physical Address"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="physicalAddress" name="physicalAddress"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilEnvelopeClosed"></svg>
+                    </span>
+                    <input cFormControl placeholder="Contact Email"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="contactEmail" name="contactEmail"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilInbox"></svg>
+                    </span>
+                    <input cFormControl placeholder="Phone Number"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="phoneNumber" name="phoneNumber"/>
+                  </c-input-group>
+                  <c-form-check class="mb-3" sizing="lg" switch>
+                    <input cFormCheckInput checked type="checkbox" [ngModelOptions]="{standalone: true}" name="isActive" [(ngModel)]="isActive" />
+                    <label cFormCheckLabel>Activate</label>
+                  </c-form-check>
+
+                  <c-row>
+                    <c-col xs="6">
+                      <button type="submit" cButton class="btn px-4" style="background-color: #2c3e56; color: white; width: 100%;">
+                        Update
+                      </button>
+                    </c-col>
+                    <c-col xs="6">
+                      <a routerLink="/base/manage-orgs" type="submit" cButton class="btn px-4" style="background-color: #cf2f4c; color: white; width: 100% ">
+                        Cancel
+                      </a>
+                    </c-col>
+                  </c-row>
+                </form>
+              </c-card-body>
+            </c-card>
+          </c-card-group>
+        </c-col>
+      </c-row>
+    </c-container>
+  </div>
+</div>

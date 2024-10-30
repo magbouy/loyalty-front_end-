@@ -1,0 +1,78 @@
+<div id="main">
+  <div id="maindiv" class="bg-light min-vh-100 d-flex flex-row align-items-center">
+    <c-container>
+      <c-row class="justify-content-center">
+        <c-col md="8" sm="10" lg="6">
+          <c-card-group>
+            <c-card class="p-4">
+              <c-card-body>
+                <form (submit)="submitForm()">
+                  <h1 class="text-center">Stakeholder Registration</h1><br>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilPeople"></svg>
+                    </span>
+                    <input cFormControl placeholder="Organisation Name"
+                           [ngModelOptions]="{standalone: true}" name="organisationName" [(ngModel)]="organisationName"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                    <input cFormControl placeholder="Industry"
+                           [ngModelOptions]="{standalone: true}" name="industry" [(ngModel)]="industry"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilUser"></svg>
+                    </span>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="stakeholderType" [(ngModel)]="stakeholderType">
+                      <option selected>Choose stakeholder type</option>
+                      <option value="Service Provider">Service Provider</option>
+                      <option value="Construction">Construction</option>
+                      <option value="Governance">Governance and Oversight</option>
+                    </select>
+                  </c-input-group>
+
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilLocationPin"></svg>
+                    </span>
+                    <input cFormControl placeholder="Physical Address"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="physicalAddress" name="physicalAddress"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilEnvelopeClosed"></svg>
+                    </span>
+                    <input cFormControl placeholder="Contact Email"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="contactEmail" name="contactEmail"/>
+                  </c-input-group>
+                  <c-input-group class="mb-3">
+                    <span cInputGroupText>
+                      <svg cIcon name="cilInbox"></svg>
+                    </span>
+                    <input cFormControl placeholder="Phone Number"
+                           [ngModelOptions]="{standalone: true}" [(ngModel)]="phoneNumber" name="phoneNumber"/>
+                  </c-input-group>
+
+                  <c-row>
+                    <c-col xs="6">
+                      <button type="submit" cButton class="px-4" color="primary">
+                        Register
+                      </button>
+
+                    </c-col>
+<!--                    <c-col>-->
+<!--                      <a routerLink="/login" cButton class="btn btn-outline">Login</a>-->
+<!--                    </c-col>-->
+                  </c-row>
+                </form>
+              </c-card-body>
+            </c-card>
+          </c-card-group>
+        </c-col>
+      </c-row>
+    </c-container>
+  </div>
+</div>

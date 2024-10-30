@@ -1,0 +1,221 @@
+<div class="maindiv">
+  <div class="container">
+    <div class="card shadow p-2">
+      <mat-stepper class="mt-3">
+        <mat-step completed="false">
+        <!-- <mat-step label="Available Rewards" completed="false"> -->
+          <!-- <h4 class="lead mt-3"></h4> -->
+
+          
+          <c-row [gutter]="4" class="mb-3" [md]="4" [xs]="2">
+    
+             <c-col>
+               <c-card class="mb-3">
+                <img cCardImg="top" class="mb-3 hover-effect" style="transition: transform 0.2s;" src="./assets/images/drink1.jpeg">
+                <c-card-body>
+
+
+
+                  <h5 cCardTitle>{{ drink.name }}</h5>
+                  <p style="display: none;">{{ drink.id }}</p>
+                  <p cCardText>
+                    <p>Points: {{ drink.pointsrequired }}</p><br><br>
+                    <p cCardText> click  the redeem button to claim the reward
+            
+                              <button (click)="submitForm(drink)" cButton>Redeem</button> 
+
+                  <!-- Button to trigger the modal -->
+                  <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButton>Redeem</button> -->
+
+                  <!-- Modal definition -->
+                   <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal"> 
+                     <c-modal-header>
+                      <h5 cModalTitle>Confirmation</h5>
+                      <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button>
+                    </c-modal-header>
+                    <c-modal-body>
+                      <b>
+                        <p>Are you sure you want to redeem <strong>{{ drink.name }}</strong> for <b>{{ drink.pointsrequired }}</b> points?</p>
+                      </b>
+                    </c-modal-body>
+                    <c-modal-footer>
+                      <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButton color="secondary">No</button> -->
+            
+                      <!-- YES button to confirm and trigger the redeem action -->
+                    <button (click)="submitForm(drink)" cButton cButton color="primary">Redeem</button>
+
+                     <!-- <button type="submit" [cModalToggle]="verticallyCenteredModal.id" cButton color="primary">YES!</button> -->
+                    </c-modal-footer>
+                  </c-modal> 
+                </c-card-body>
+              </c-card>
+            </c-col>
+            
+           
+           
+           
+           
+           
+           
+           
+           
+            <c-col>
+              <c-card class="mb-3">
+                <img cCardImg="top"  class="mb-3 hover-effect" style="transition: transform 0.2s;"src="./assets/images/oill.jpeg">
+                <c-card-body  >
+                  <h5 cCardTitle>{{ oil.name }}</h5>
+                  <p style="display: none;">{{ oil.id }}</p>
+                  <p cCardText>
+                  <!-- <p cCardText> -->
+                    <p>points:{{ oil.pointsrequired }}</p><br><br>
+                    <p cCardText> click  the redeem button to claim the reward
+
+                    <button (click)="submitForm(oil)" cButton color="primary">Redeem</button>
+
+                    <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButton>Redeem</button> -->
+
+                    <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal">
+                      <c-modal-header>
+                        <h5 cModalTitle>Confirmation</h5>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button>
+                      </c-modal-header>
+                      <c-modal-body>
+                       <b> <p>Are you sure you want to redeem this reward </p></b>
+                       <!-- Are you sure you want to redeem {{drink.name}}, for <b>{{drink.pointsrequired}}</b> points -->
+                      </c-modal-body>
+                      <c-modal-footer>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButton color="secondary">
+                          No
+                        </button>
+                        <button  color="primary">YES!</button>
+                      </c-modal-footer>
+                    </c-modal>
+ 
+                </c-card-body>
+              </c-card>
+            </c-col>
+
+
+
+
+            <c-col>
+              <c-card class="mb-3">
+                <img cCardImg="top"  class="mb-3 hover-effect" style="transition: transform 0.2s;"src="./assets/images/choclate2.jpeg">
+                <c-card-body  >
+                  <h5 cCardTitle>{{ choclate.name }}</h5>
+                  <p style="display: none;">{{ choclate.id }}</p>
+                  <p cCardText>
+                  <!-- <p cCardText> -->
+                    <p>points:{{ choclate.pointsrequired }}</p>
+          
+                    <p cCardText> click  the redeem button to claim the reward
+                    <button (click)="submitForm(choclate)" cButton color="primary">Redeem</button>
+
+                    <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButton>Redeem</button> -->
+
+                    <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal">
+                      <c-modal-header>
+                        <h5 cModalTitle>Confirmation</h5>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button>
+                      </c-modal-header>
+                      <c-modal-body>
+                        <b> <p>Are you sure you want to redeem this reward </p></b>                  
+                             <!-- Are you sure you want to redeem {{choclate.name}}, for <b>{{choclate.pointsrequired}}</b> points -->
+                      </c-modal-body>
+                      <c-modal-footer>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButton color="secondary">
+                          No
+                        </button>
+                        <button type="submit" cButton color="primary">YES!</button>
+                      </c-modal-footer>
+                    </c-modal>
+ 
+                </c-card-body>
+              </c-card>
+            </c-col>
+
+
+
+
+
+            <c-col>
+              <c-card class="mb-3">
+                <img cCardImg="top"  class="mb-3 hover-effect" style="transition: transform 0.2s;"src="./assets/img/new.png">
+                <c-card-body  >
+                  <h5 cCardTitle>{{ vegetables.name }}</h5>
+                  <!-- <p cCardText> -->
+                  <p style="display: none;">{{ vegetables.id }}</p><br/>
+                  <!-- <p cCardText> -->
+                    <p>points:{{ vegetables.pointsrequired }}</p>
+                    <p cCardText> click  the redeem button to claim the reward
+                    <button (click)="submitForm(vegetables)" cButton color="primary">Redeem</button>
+
+                    <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButton>Redeem</button> -->
+
+                    <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal">
+                      <c-modal-header>
+                        <h5 cModalTitle>Confirmation</h5>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button>
+                      </c-modal-header>
+                      <c-modal-body>
+                        <b> <p>Are you sure you want to redeem this reward </p></b>                  
+                             <!-- Are you sure you want to redeem {{choclate.name}}, for <b>{{choclate.pointsrequired}}</b> points -->
+                      </c-modal-body>
+                      <c-modal-footer>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButton color="secondary">
+                          No
+                        </button>
+                        <button type="submit" cButton color="primary">YES!</button>
+                      </c-modal-footer>
+                    </c-modal>
+ 
+                </c-card-body>
+              </c-card>
+            </c-col>
+
+
+
+
+
+
+            <c-col>
+              <c-card class="mb-3">
+                <img cCardImg="top"  class="mb-3 hover-effect" style="transition: transform 0.2s;"src="./assets/images/sug.jpeg">
+                <c-card-body  >
+                  <h5 cCardTitle>{{ sugar.name }}</h5>
+                  <p style="display: none;">{{ sugar.id }}</p>
+                  <p cCardText>
+                  <!-- <p cCardText> -->
+                    <p>points:{{ sugar.pointsrequired }}</p><br><br>
+                    <small class="text-medium-emphasis"></small>
+
+                    <button (click)="submitForm(sugar)" cButton color="primary">Redeem</button>
+
+                    <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButton>Redeem</button> -->
+
+                    <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal">
+                      <c-modal-header>
+                        <h5 cModalTitle>Confirmation</h5>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button>
+                      </c-modal-header>
+                      <c-modal-body>
+                        <b> <p>Are you sure you want to redeem this reward </p></b>                  
+                             <!-- Are you sure you want to redeem {{choclate.name}}, for <b>{{choclate.pointsrequired}}</b> points -->
+                      </c-modal-body>
+                      <c-modal-footer>
+                        <button [cModalToggle]="verticallyCenteredModal.id" cButton color="secondary">
+                          No
+                        </button>
+                        <button type="submit" cButton color="primary">YES!</button>
+                      </c-modal-footer>
+                    </c-modal>
+ 
+                </c-card-body>
+              </c-card>
+            </c-col>
+
+
+
+
+           
+           

@@ -1,0 +1,44 @@
+<div class="card mb-2">
+  <div class="card-body">
+    <h4 class="card-title">Responses Summary</h4>
+    <p>Number of Responses: {{responses.length}} </p>
+  </div>
+</div>
+
+<table cTable class="table table-borderless shadow table-striped">
+  <thead>
+  <tr>
+    <th>Response Id</th>
+    <th>Organisation Name</th>
+    <th>Message</th>
+    <th>Response Status</th>
+    <th>Date of Response</th>
+    <th>Contact Information</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let response of responses; let waitlist of waitCount;">
+    <td>{{response.id}}</td>
+    <td>{{response.organisationName}}</td>
+    <td>{{response.message}}</td>
+    <td>{{response.responseStatus}}</td>
+    <td>{{response.createdOn | date: 'longDate'}}</td>
+    <td>
+      <button class="btn" id="modalBtn" (click)="open(content); fetchOrganisation(response.organisationName)"><i
+        class="bi bi-clipboard-data" style="color: #2c3e56; font-size: 23px"></i></button>
+    </td>
+    <!--    Info Modal -->
+    <ng-template let-modal #content>
+      <div class="modal-header" style="background-color: #2c3e56; color: white;">
+        <h4 class="text-center">{{contactInfo.organisationName}}</h4><br>
+      </div>
+        <div class="modal-body text-center">
+          <p>Contact Email: {{contactInfo.contactEmail}}</p>
+          <p>Phone Number: {{contactInfo.phoneNumber}}</p>
+          <p>Physical Address: {{contactInfo.physicalAddress}}</p>
+        </div>
+    </ng-template>
+
+  </tr>
+  </tbody>
+</table>

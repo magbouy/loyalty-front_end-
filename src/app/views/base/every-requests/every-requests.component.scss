@@ -1,0 +1,50 @@
+
+// Define some variables for colors and spacing
+
+table {
+  width: 100%;               // Make the table take up the full width
+  border-collapse: collapse;  // Remove gaps between table cells
+  font-size: 16px;            // Adjust font size if needed
+  
+  thead {
+    background-color: #f8f9fa;  // Light background color for table header
+
+    th {
+      padding: 12px;             // Add padding to header cells
+      text-align: left;          // Align text to the left
+      border-bottom: 2px solid #dee2e6;  // Add bottom border to header cells
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #f2f2f2;  // Alternate row background color for better readability
+      }
+
+      &:hover {
+        background-color: #e9ecef;   // Highlight row on hover
+      }
+
+      th, td {
+        padding: 12px;              // Add padding to body cells
+        border-bottom: 1px solid #dee2e6;  // Bottom border for rows
+      }
+
+      th {
+        background-color: #f8f9fa;  // Light background for row headers
+        text-align: left;           // Align row headers to the left
+      }
+
+      td {
+        text-align: left;           // Align all body text to the left
+      }
+
+      td[colspan="2"] {
+        text-align: center;         // Center align text when a cell spans two columns
+      }
+    }
+  }
+}
+
+

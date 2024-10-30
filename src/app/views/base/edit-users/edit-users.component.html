@@ -1,0 +1,76 @@
+<div id="main">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col md="8" sm="10" lg="6">
+        <c-card-group>
+          <c-card class="p-4">
+            <c-card-body>
+              <form (submit)="saveUsers()">
+                <h3 class="text-center">Update User Information</h3><br>
+                <c-input-group class="mb-3">
+                                        <span cInputGroupText>
+                                            <svg cIcon name="cilPeople"></svg>
+                                        </span>
+                  <input cFormControl placeholder="Organisation Name"
+                         [ngModelOptions]="{standalone: true}" name="organisationName"
+                         [(ngModel)]="organisationName" disabled="true"/>
+                </c-input-group>
+                <c-input-group class="mb-3">
+                                        <span cInputGroupText>
+                                            <svg cIcon name="cilEnvelopeClosed"></svg>
+                                        </span>
+                  <input cFormControl placeholder="Contact Email"
+                         [ngModelOptions]="{standalone: true}" [(ngModel)]="contactEmail"
+                         name="contactEmail"/>
+                </c-input-group>
+                <c-input-group class="mb-3">
+                                        <span cInputGroupText>
+                                            <svg cIcon name="cilLockLocked"></svg>
+                                        </span>
+                  <input cFormControl placeholder="New Password" type="password"
+                         [ngModelOptions]="{standalone: true}" [(ngModel)]="password"
+                         name="contactEmail"/>
+                </c-input-group>
+                <c-input-group class="mb-3">
+                                        <span cInputGroupText>
+                                            <svg cIcon name="cilUser"></svg>
+                                        </span>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                          name="stakeholderType" [(ngModel)]="role">
+                    <option selected>Choose Role</option>
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                  </select>
+                </c-input-group>
+                <c-form-check class="mt-2 mb-3" sizing="lg" switch>
+                  <input cFormCheckInput checked type="checkbox" [value]="isActive"
+                         [ngModelOptions]="{standalone: true}" name="isActive"
+                         [(ngModel)]="isActive"/>
+                  <label cFormCheckLabel>Activate User</label>
+                </c-form-check>
+
+                <br><br>
+                <c-row>
+                  <c-col xs="6">
+                    <button type="submit" cButton class="btn px-4"
+                            style="background-color: #2c3e56; color: white; width: 100%;">
+                      Update
+                    </button>
+                  </c-col>
+                  <c-col xs="6">
+                    <a routerLink="/base/manage-users" type="submit" cButton
+                       class="btn px-4"
+                       style="background-color: #cf2f4c; color: white; width: 100% ">
+                      Cancel
+                    </a>
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>
+

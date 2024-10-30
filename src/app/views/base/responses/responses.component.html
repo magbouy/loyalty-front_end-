@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div class="btn-group" role="group">
+  <button style="color: white; background-color: #314566FF;" class="btn"
+          [routerLink]="'/base/every-requests'">
+    All Requests
+  </button>
+  <button style="color: white; background-color: #314566FF;" class="btn"
+          [routerLink]="'/base/my-requests'">
+    My Requests
+  </button>
+  <button style="color: white; background-color: #2c3e56;" class="btn active"
+          [routerLink]="'/base/view-responses'">
+    View Responses
+  </button>
+</div>
+
+
+<div class="container-fluid mt-3">
+  <table class="table shadow" matSort>
+    <thead>
+    <tr>
+      <th mat-sort-header="id">#</th>
+      <th>Request Id</th>
+      <th>Message</th>
+      <th>Status</th>
+      <th>Organisation</th>
+      <th>Response Date</th>
+      <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let response of responsesByUser
+            | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index
+        "
+    >
+      <td><span>{{ response.id }}</span></td>
+      <td><span>{{ response.requestReference }}</span></td>
+      <td><span>{{ response.message }}</span></td>
+<!--      <td><span>{{ response.responseStatus }}</span></td>-->
+      <td><span style="width: 80px" [ngClass]="getStatusBadgeClass(response.responseStatus)">{{ response.responseStatus }}</span></td>
+
+      <td><span>{{ response.organisationName }}</span></td>
+      <td><span>{{ response.createdOn | date: 'longDate' }}</span></td>
+      <td><button class="btn btn-sm" id="modalbtn" (click)="toggleLiveDemo(); appendForm(response)"><i class="bi bi-pencil" style="color:#4CAF50; font-size: 16px;"></i></button></td>
+      <c-modal id="liveDemoModal" [visible]="visible" (visibleChange)="handleLiveDemoChange($event)">
+        <c-modal-header>
+          <h5 cModalTitle>Edit Response</h5>
+          <button (click)="toggleLiveDemo()" cButtonClose></button>
+        </c-modal-header>
+        <c-modal-body>
+          <form [formGroup]="responseForm">
+            <div class="form-row">
+              <div class="form-group col-8">
+              </div>
+              <div class="modal-body">
+                <input formControlName="id" [value]="response.id" name="id" hidden>
+                <div class="">
+                  <label class="col-form-label">Decision:</label>
+                  <select formControlName="decision" class="form-control" id="decision" aria-label="Default select example" name="decision" cSelect>
+                    <option>Select Response Status</option>
+                    <option value="Proceed">Proceed</option>
+                    <option value="Wait">Wait</option>
+                    <option value="Deny">Deny</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <div class="mb-3">
+                    <label class="col-form-label">Message:</label>
+                    <textarea class="form-control" formControlName="message" id="message" name="message"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </c-modal-body>
+        <c-modal-footer>
+          <button (click)="toggleLiveDemo()" cButton style="color: white; background-color: #cf2f4c;">
+            Close
+          </button>
+          <button cButton style="background-color: #2c3e56; color: white;" (click)="editResponse(response)">Save changes</button>
+        </c-modal-footer>
+      </c-modal>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!--<pagination-controls-->
+<!--  class=" pagination-controls"-->
+<!--  previousLabel="Prev"-->
+<!--  nextLabel="Next"-->
+<!--  (pageChange)="onTableDataChange($event)"-->
+<!--&gt;-->
+<!--</pagination-controls>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+
+</head>
+<!--div>
+  <pagination-controls
+   previousLabel="Prev"
+   nextLabel="Next"
+   (pageChange)="onTableDataChange($event)"
+>
+
+  </pagination-controls>
+</div-->
+
+<div class="container">
+  <table class="table table-bordered table-striped shadow">
+    <thead>
+    <tr>
+      <th>Location</th>
+      <th>Activity Details</th>
+      <th>Reporter Name</th>
+      <th>Reporter Contact</th>
+<!--      <th>Reporter</th>-->
+      <th>Date Posted</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let request of requests.reverse()">
+      <td><span>{{ request.location }}</span></td>
+      <td><span>{{ request.eventDetails }}</span></td>
+      <td><span>{{ request.fullName }}</span></td>
+      <td><span>{{ request.phonenumber }}</span></td>
+<!--      <td><span>{{ request.accountCode }}</span></td>-->
+      <td><span>{{ request.reportedOn | date:'longDate'}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+    <!--tr *ngFor="let request of requests|paginate:{itemsPerPage: tableSize,
+      currentPage: page,
+      totalItems: count};
+      let i = index"3-->
